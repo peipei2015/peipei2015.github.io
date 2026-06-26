@@ -1,70 +1,218 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Song Pipi | Academic Homepage</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peipei Song (宋培培)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* 顶部导航栏 */
+        nav {
+            border-bottom: 1px solid #eee;
+            padding: 18px 0;
+            margin-bottom: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #555;
+            margin-right: 32px;
+            font-size: 17px;
+        }
+        nav a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        nav a:first-child {
+            font-weight: 600;
+        }
+        /* 整体容器：左右两栏布局 */
+        .container {
+            display: flex;
+            gap: 45px;
+        }
+        /* 左侧侧边栏 */
+        .sidebar {
+            width: 240px;
+            flex-shrink: 0;
+        }
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+        }
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .sidebar .affiliation {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 14px;
+        }
+        .sidebar .research-focus {
+            margin: 15px 0;
+            line-height: 1.55;
+        }
+        .sidebar .contact-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .sidebar a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        /* 右侧主内容区 */
+        .main-content {
+            flex: 1;
+        }
+        .intro-text {
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+        .intro-text p {
+            margin-bottom: 14px;
+        }
+        .intro-text a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .intro-text a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 35px;
+        }
+        section h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        ul {
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .pub-item {
+            margin-bottom: 14px;
+            line-height: 1.55;
+        }
+        .pub-item a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .pub-item a:hover {
+            text-decoration: underline;
+        }
+        /* 响应式适配手机 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+            }
+            nav a {
+                margin-right: 16px;
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
+    <!-- 顶部导航栏 -->
+    <nav>
+        <a href="#">Homepage</a>
+        <a href="#">About Me</a>
+        <a href="#">News</a>
+        <a href="#">Publications</a>
+        <a href="#">Funds</a>
+        <a href="#">Experience</a>
+        <a href="#">Services</a>
+    </nav>
 
-    <!-- 头部 -->
-    <header>
-        <img src="assets/images/avatar.jpg" alt="Avatar">
-        <h1>Song Pipi</h1>
-        <p>Associate Researcher<br>
-           School of Information Science and Technology<br>
-           University of Science and Technology of China (USTC)</p>
-    </header>
+    <div class="container">
+        <!-- 左侧个人侧边栏 -->
+        <div class="sidebar">
+            <!-- 替换为你的头像图片地址 -->
+            <img class="avatar" src="avatar.jpg" alt="Peipei Song">
+            <h2>Peipei Song (宋培培)</h2>
+            <div class="affiliation">University of Science and Technology of China</div>
+            <div class="research-focus">
+                Focusing on multimodal intelligence and empathetic AI
+            </div>
+            <div class="contact-item">
+                <span>📍</span> Hefei, China
+            </div>
+            <div class="contact-item">
+                <span>✉️</span> <a href="mailto:xxx@ustc.edu.cn">Email</a>
+            </div>
+            <div class="contact-item">
+                <span>🎓</span> <a href="#">Google Scholar</a>
+            </div>
+        </div>
 
-    <!-- About -->
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I am currently an Associate Researcher at USTC. 
-            Previously, I worked as a postdoctoral researcher (July 2023 – June 2025) 
-            at the School of Information Science and Technology, USTC.  
-            I received my B.Eng. and Ph.D. from the School of Computer Science and Information Engineering, 
-            Hefei University of Technology.
-        </p>
-    </section>
+        <!-- 右侧正文内容 -->
+        <div class="main-content">
+            <div class="intro-text">
+                <p>I am currently an Associate Researcher at the School of Information Science and Technology, University of Science and Technology of China (USTC). I am a member of the <a href="#">Future Media Computing Lab (未来媒体计算实验室)</a>, led by Prof. Xiaojun Chang (常晓军) and Prof. Xun Yang (杨勋).</p>
 
-    <!-- Research -->
-    <section>
-        <h2>Research Interests</h2>
-        <ul>
-            <li>Multimodal Intelligence</li>
-            <li>Vision-Language-Audio Perception & Reasoning</li>
-            <li>Visual Emotion Analysis</li>
-            <li>Cross-Modal Retrieval & Visual Captioning</li>
-        </ul>
-    </section>
+                <p>I completed my postdoctoral researcher job from July 2023 to June 2025 at the School of Information Science and Technology, University of Science and Technology of China, in Hefei, China, under the supervision of Prof. Xun Yang (杨勋). I obtained my bachelor’s and doctoral degrees from the School of Computer Science and Information Engineering, Hefei University of Technology. During my doctoral studies, I was supervised by Prof. Meng Wang (汪萌) and Prof. Dan Guo (郭丹).</p>
 
-    <!-- Education -->
-    <section>
-        <h2>Education & Experience</h2>
-        <ul>
-            <li><strong>Ph.D.</strong>, Hefei University of Technology, 20XX–20XX</li>
-            <li><strong>B.Eng.</strong>, Hefei University of Technology, 20XX–20XX</li>
-            <li><strong>Postdoc</strong>, USTC, 2023–2025</li>
-            <li><strong>Associate Researcher</strong>, USTC, 2025–Present</li>
-        </ul>
-    </section>
+                <p>My research centers on multimodal intelligence, with a focus on perception, reasoning, and generation across vision, language, and audio modalities. I am particularly interested in how machines can perceive, interpret, and respond to human emotions in a multimodal context. My work spans topics such as cross-modal retrieval, visual captioning, and visual emotion reasoning, with the long-term goal of building empathetic and human-centric AI systems. If you are seeking any form of academic cooperation, please feel free to <a href="#">contact me</a>.</p>
+            </div>
 
-    <!-- Contact -->
-    <section>
-        <h2>Contact</h2>
-        <p>
-            Email: songpipi [at] ustc.edu.cn<br>
-            GitHub: <a href="https://github.com/songpipi">songpipi</a>
-        </p>
-    </section>
+            <!-- News 板块 -->
+            <section>
+                <h3>🔥 News</h3>
+                <ul>
+                    <li>2026.01: 🎉One paper is accepted by ICASSP!</li>
+                    <li>2026.01: 🎉One paper is accepted by WWW!</li>
+                    <li>2025.08: 🎉One paper is accepted by EMNLP Findings!</li>
+                    <li>2025.07: 🎉Three paper are accepted by ACM MM!</li>
+                    <li>2025.05: 🎉One paper is accepted by IEEE TMM!</li>
+                    <li>2025.02: 🎉One paper is accepted by ACM TIST!</li>
+                    <li>2025.01: 🎉Two papers are accepted by IEEE TMM and IEEE TCSVT!</li>
+                </ul>
+            </section>
 
-    <footer>
-        © 2026 Song Pipi · Built with GitHub Pages
-    </footer>
-
-</div>
-<script src="script.js"></script>
+            <!-- Selected Publications 板块 -->
+            <section>
+                <h3>📝 Selected Publications</h3>
+                <div class="pub-item">
+                    <a href="#">Beyond emotion recognition: A multi-turn multimodal emotion understanding and reasoning benchmark</a>, Jinpeng Hu, Hongchang Shi, Chongyuan Dai, Zhuo Li, Peipei Song, Meng Wang, ACM MM 2025
+                </div>
+                <div class="pub-item">
+                    <a href="#">Video Corpus Moment Retrieval With Query-Specific Context Learning And Progressive Localization</a>, Long Zhang, Peipei Song*, Zhangling Duan, Shuo Wang, Xiaojun Chang, Xun Yang, IEEE TCSVT 2025
+                </div>
+                <div class="pub-item">
+                    <a href="#">Towards Efficient Partially Relevant Video Retrieval With Active Moment Discovering</a>, Peipei Song, Long Zhang, Long Lan, Weidong Chen, Dan ...
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>
