@@ -9,17 +9,20 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
         }
         body {
-            max-width: 1200px;
+            max-width: 1220px;
             margin: 0 auto;
             padding: 0 20px;
             color: #333;
             line-height: 1.6;
         }
-        /* 顶部导航栏 */
-        nav {
+        /* 导航栏容器 */
+        .nav-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid #eee;
             padding: 18px 0;
             margin-bottom: 30px;
@@ -37,12 +40,25 @@
         nav a:first-child {
             font-weight: 600;
         }
-        /* 整体容器：左右两栏布局 */
+        /* 语言切换按钮 */
+        .lang-btn-group button {
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 4px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .lang-btn-group button.active {
+            background: #0056b3;
+            color: white;
+            border-color: #0056b3;
+        }
+        /* 整体左右布局 */
         .container {
             display: flex;
             gap: 45px;
         }
-        /* 左侧侧边栏 */
+        /* 侧边栏 */
         .sidebar {
             width: 240px;
             flex-shrink: 0;
@@ -81,7 +97,7 @@
         .sidebar a:hover {
             text-decoration: underline;
         }
-        /* 右侧主内容区 */
+        /* 主内容区 */
         .main-content {
             flex: 1;
         }
@@ -127,8 +143,20 @@
         .pub-item a:hover {
             text-decoration: underline;
         }
-        /* 响应式适配手机 */
+        /* 双语控制：默认隐藏中文，英文显示 */
+        .cn {
+            display: none;
+        }
+        .en {
+            display: block;
+        }
+        /* 移动端适配 */
         @media (max-width: 768px) {
+            .nav-wrap {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
             .container {
                 flex-direction: column;
             }
@@ -143,76 +171,173 @@
     </style>
 </head>
 <body>
-    <!-- 顶部导航栏 -->
-    <nav>
-        <a href="#">Homepage</a>
-        <a href="#">About Me</a>
-        <a href="#">News</a>
-        <a href="#">Publications</a>
-        <a href="#">Funds</a>
-        <a href="#">Experience</a>
-        <a href="#">Services</a>
-    </nav>
+    <!-- 导航栏 + 语言切换 -->
+    <div class="nav-wrap">
+        <nav>
+            <a href="#" class="en">Homepage</a>
+            <a href="#" class="cn">主页</a>
+
+            <a href="#" class="en">About Me</a>
+            <a href="#" class="cn">个人简介</a>
+
+            <a href="#" class="en">News</a>
+            <a href="#" class="cn">动态新闻</a>
+
+            <a href="#" class="en">Publications</a>
+            <a href="#" class="cn">论文成果</a>
+
+            <a href="#" class="en">Funds</a>
+            <a href="#" class="cn">科研项目</a>
+
+            <a href="#" class="en">Experience</a>
+            <a href="#" class="cn">履历经历</a>
+
+            <a href="#" class="en">Services</a>
+            <a href="#" class="cn">学术服务</a>
+        </nav>
+        <div class="lang-btn-group">
+            <button id="btnEn" class="active">English</button>
+            <button id="btnCn">中文</button>
+        </div>
+    </div>
 
     <div class="container">
-        <!-- 左侧个人侧边栏 -->
+        <!-- 左侧侧边栏 -->
         <div class="sidebar">
-            <!-- 替换为你的头像图片地址 -->
             <img class="avatar" src="avatar.jpg" alt="Peipei Song">
             <h2>Peipei Song (宋培培)</h2>
             <div class="affiliation">University of Science and Technology of China</div>
-            <div class="research-focus">
+
+            <div class="research-focus en">
                 Focusing on multimodal intelligence and empathetic AI
             </div>
+            <div class="research-focus cn">
+                研究方向：多模态智能与共情人工智能
+            </div>
+
             <div class="contact-item">
-                <span>📍</span> Hefei, China
+                <span>📍</span>
+                <span class="en">Hefei, China</span>
+                <span class="cn">中国·合肥</span>
             </div>
             <div class="contact-item">
-                <span>✉️</span> <a href="mailto:xxx@ustc.edu.cn">Email</a>
+                <span>✉️</span>
+                <a href="mailto:xxx@ustc.edu.cn">Email</a>
             </div>
             <div class="contact-item">
-                <span>🎓</span> <a href="#">Google Scholar</a>
+                <span>🎓</span>
+                <a href="#">Google Scholar</a>
             </div>
         </div>
 
-        <!-- 右侧正文内容 -->
+        <!-- 右侧正文 -->
         <div class="main-content">
             <div class="intro-text">
-                <p>I am currently an Associate Researcher at the School of Information Science and Technology, University of Science and Technology of China (USTC). I am a member of the <a href="#">Future Media Computing Lab (未来媒体计算实验室)</a>, led by Prof. Xiaojun Chang (常晓军) and Prof. Xun Yang (杨勋).</p>
+                <!-- 英文简介 -->
+                <div class="en">
+                    <p>I am currently an Associate Researcher at the School of Information Science and Technology, University of Science and Technology of China (USTC). I am a member of the <a href="#">Future Media Computing Lab (未来媒体计算实验室)</a>, led by Prof. Xiaojun Chang (常晓军) and Prof. Xun Yang (杨勋).</p>
 
-                <p>I completed my postdoctoral researcher job from July 2023 to June 2025 at the School of Information Science and Technology, University of Science and Technology of China, in Hefei, China, under the supervision of Prof. Xun Yang (杨勋). I obtained my bachelor’s and doctoral degrees from the School of Computer Science and Information Engineering, Hefei University of Technology. During my doctoral studies, I was supervised by Prof. Meng Wang (汪萌) and Prof. Dan Guo (郭丹).</p>
+                    <p>I completed my postdoctoral researcher job from July 2023 to June 2025 at the School of Information Science and Technology, University of Science and Technology of China, in Hefei, China, under the supervision of Prof. Xun Yang (杨勋). I obtained my bachelor’s and doctoral degrees from the School of Computer Science and Information Engineering, Hefei University of Technology. During my doctoral studies, I was supervised by Prof. Meng Wang (汪萌) and Prof. Dan Guo (郭丹).</p>
 
-                <p>My research centers on multimodal intelligence, with a focus on perception, reasoning, and generation across vision, language, and audio modalities. I am particularly interested in how machines can perceive, interpret, and respond to human emotions in a multimodal context. My work spans topics such as cross-modal retrieval, visual captioning, and visual emotion reasoning, with the long-term goal of building empathetic and human-centric AI systems. If you are seeking any form of academic cooperation, please feel free to <a href="#">contact me</a>.</p>
+                    <p>My research centers on multimodal intelligence, with a focus on perception, reasoning, and generation across vision, language, and audio modalities. I am particularly interested in how machines can perceive, interpret, and respond to human emotions in a multimodal context. My work spans topics such as cross-modal retrieval, visual captioning, and visual emotion reasoning, with the long-term goal of building empathetic and human-centric AI systems. If you are seeking any form of academic cooperation, please feel free to <a href="#">contact me</a>.</p>
+                </div>
+
+                <!-- 中文简介 -->
+                <div class="cn">
+                    <p>我现任中国科学技术大学信息科学与技术学院副研究员，隶属于由常晓军教授、杨勋教授领衔的<a href="#">未来媒体计算实验室</a>。</p>
+
+                    <p>2023年7月—2025年6月于中国科学技术大学信息科学与技术学院从事博士后研究，合作导师为杨勋教授。本科与博士毕业于合肥工业大学计算机与信息工程学院，博士阶段师从汪萌教授与郭丹教授。</p>
+
+                    <p>主要研究方向为多模态智能，聚焦视觉、文本、音频跨模态感知、推理与生成；重点研究多模态场景下机器感知、理解、识别人类情绪的相关问题，具体包括跨模态检索、视觉描述生成、视觉情感推理等课题，长期目标是构建具备共情能力、以人为中心的人工智能系统。若有学术合作意向，欢迎<a href="#">联系我</a>。</p>
+                </div>
             </div>
 
-            <!-- News 板块 -->
+            <!-- News 动态 -->
             <section>
-                <h3>🔥 News</h3>
-                <ul>
+                <h3>
+                    <span>🔥</span>
+                    <span class="en">News</span>
+                    <span class="cn">近期动态</span>
+                </h3>
+                <ul class="en">
                     <li>2026.01: 🎉One paper is accepted by ICASSP!</li>
                     <li>2026.01: 🎉One paper is accepted by WWW!</li>
                     <li>2025.08: 🎉One paper is accepted by EMNLP Findings!</li>
-                    <li>2025.07: 🎉Three paper are accepted by ACM MM!</li>
+                    <li>2025.07: 🎉Three papers are accepted by ACM MM!</li>
                     <li>2025.05: 🎉One paper is accepted by IEEE TMM!</li>
                     <li>2025.02: 🎉One paper is accepted by ACM TIST!</li>
                     <li>2025.01: 🎉Two papers are accepted by IEEE TMM and IEEE TCSVT!</li>
                 </ul>
+                <ul class="cn">
+                    <li>2026.01: 🎉一篇论文被 ICASSP 录用！</li>
+                    <li>2026.01: 🎉一篇论文被 WWW 录用！</li>
+                    <li>2025.08: 🎉一篇论文被 EMNLP Findings 录用！</li>
+                    <li>2025.07: 🎉三篇论文被 ACM MM 录用！</li>
+                    <li>2025.05: 🎉一篇论文被 IEEE TMM 录用！</li>
+                    <li>2025.02: 🎉一篇论文被 ACM TIST 录用！</li>
+                    <li>2025.01: 🎉两篇论文分别被 IEEE TMM、IEEE TCSVT 录用！</li>
+                </ul>
             </section>
 
-            <!-- Selected Publications 板块 -->
+            <!-- 代表性论文 -->
             <section>
-                <h3>📝 Selected Publications</h3>
-                <div class="pub-item">
-                    <a href="#">Beyond emotion recognition: A multi-turn multimodal emotion understanding and reasoning benchmark</a>, Jinpeng Hu, Hongchang Shi, Chongyuan Dai, Zhuo Li, Peipei Song, Meng Wang, ACM MM 2025
+                <h3>
+                    <span>📝</span>
+                    <span class="en">Selected Publications</span>
+                    <span class="cn">代表性论文</span>
+                </h3>
+                <div class="en">
+                    <div class="pub-item">
+                        <a href="#">Beyond emotion recognition: A multi-turn multimodal emotion understanding and reasoning benchmark</a>, Jinpeng Hu, Hongchang Shi, Chongyuan Dai, Zhuo Li, Peipei Song, Meng Wang, ACM MM 2025
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">Video Corpus Moment Retrieval With Query-Specific Context Learning And Progressive Localization</a>, Long Zhang, Peipei Song*, Zhangling Duan, Shuo Wang, Xiaojun Chang, Xun Yang, IEEE TCSVT 2025
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">Towards Efficient Partially Relevant Video Retrieval With Active Moment Discovering</a>, Peipei Song, Long Zhang, Long Lan, Weidong Chen, Dan Guo
+                    </div>
                 </div>
-                <div class="pub-item">
-                    <a href="#">Video Corpus Moment Retrieval With Query-Specific Context Learning And Progressive Localization</a>, Long Zhang, Peipei Song*, Zhangling Duan, Shuo Wang, Xiaojun Chang, Xun Yang, IEEE TCSVT 2025
-                </div>
-                <div class="pub-item">
-                    <a href="#">Towards Efficient Partially Relevant Video Retrieval With Active Moment Discovering</a>, Peipei Song, Long Zhang, Long Lan, Weidong Chen, Dan ...
+                <div class="cn">
+                    <div class="pub-item">
+                        <a href="#">超越情绪识别：多轮多模态情绪理解与推理基准数据集</a>, Jinpeng Hu, Hongchang Shi, Chongyuan Dai, Zhuo Li, Peipei Song, Meng Wang, ACM MM 2025
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">基于查询专属上下文学习与渐进定位的视频片段检索方法</a>, Long Zhang, 宋培培*, Zhangling Duan, Shuo Wang, Xiaojun Chang, Xun Yang, IEEE TCSVT 2025
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">面向高效部分相关视频检索的主动片段挖掘方法</a>, 宋培培, Long Zhang, Long Lan, Weidong Chen, Dan Guo
+                    </div>
                 </div>
             </section>
         </div>
     </div>
+
+    <script>
+        // 获取按钮
+        const btnEn = document.getElementById('btnEn');
+        const btnCn = document.getElementById('btnCn');
+        const allEn = document.querySelectorAll('.en');
+        const allCn = document.querySelectorAll('.cn');
+
+        // 切换英文
+        function switchEn() {
+            allEn.forEach(el => el.style.display = 'block');
+            allCn.forEach(el => el.style.display = 'none');
+            btnEn.classList.add('active');
+            btnCn.classList.remove('active');
+            document.documentElement.lang = 'en';
+        }
+        // 切换中文
+        function switchCn() {
+            allEn.forEach(el => el.style.display = 'none');
+            allCn.forEach(el => el.style.display = 'block');
+            btnEn.classList.remove('active');
+            btnCn.classList.add('active');
+            document.documentElement.lang = 'zh-CN';
+        }
+
+        btnEn.addEventListener('click', switchEn);
+        btnCn.addEventListener('click', switchCn);
+    </script>
 </body>
 </html>
