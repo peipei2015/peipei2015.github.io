@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+    background-color: #ffffff;
+    color: #222;
+    line-height: 1.65;
+    font-size: 16px;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+.header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+.header h1 {
+    font-size: 28px;
+    color: #111;
+    margin-bottom: 8px;
+}
+.header h3 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #444;
+    margin-bottom: 10px;
+}
+.header p {
+    margin: 4px 0;
+    color: #333;
+}
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.section {
+    margin-bottom: 35px;
+}
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+    color: #1a1a1a;
+}
+ul {
+    padding-left: 22px;
+}
+.timeline li, .news-list li, .fund-list li {
+    margin: 8px 0;
+}
+.paper-item {
+    margin: 14px 0;
+    padding: 10px 12px;
+    background-color: #f9fafb;
+    border-radius: 6px;
+}
+.note {
+    font-size: 14px;
+    color: #666;
+}
+.reviewer-row {
+    margin: 6px 0;
+}
+.reviewer-row span {
+    font-weight: bold;
+    margin-right: 6px;
+}
+.footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+}
+/* 移动端适配 */
+@media screen and (max-width: 720px) {
+    .container {
+        padding: 20px 15px;
+    }
+    .header h1 {
+        font-size: 24px;
+    }
+}
