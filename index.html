@@ -2,258 +2,69 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Song Pipi - 个人主页</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px 0;
-        }
-
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            margin: 0 auto 20px;
-            display: block;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .social-link {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #3498db;
-            color: white;
-            text-align: center;
-            line-height: 40px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .section {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            background: #fafafa;
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            background: white;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #2980b9;
-        }
-
-        .project-description {
-            color: #7f8c8d;
-            margin-bottom: 15px;
-        }
-
-        .project-link {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .project-link:hover {
-            background: #2980b9;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: #e1f0fa;
-            color: #3498db;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            color: #7f8c8d;
-            border-top: 1px solid #eee;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Song Pipi | Academic Homepage</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://via.placeholder.com/150/3498db/ffffff?text=SP" alt="头像" class="avatar">
-            <h1>Song Pipi</h1>
-            <p class="subtitle">前端工程师 | 开源爱好者 | 技术博主</p>
-            <div class="social-links">
-                <a href="https://github.com/songpipi" class="social-link" title="GitHub">G</a>
-                <a href="https://twitter.com/songpipi" class="social-link" title="Twitter">T</a>
-                <a href="mailto:songpipi@example.com" class="social-link" title="Email">E</a>
-                <a href="https://linkedin.com/in/songpipi" class="social-link" title="LinkedIn">L</a>
-            </div>
-        </header>
+<div class="container">
 
-        <section class="section">
-            <h2>关于我</h2>
-            <p>我是一名热爱编程的前端工程师，专注于构建用户友好的Web应用。我喜欢探索新技术，并热衷于开源项目贡献。</p>
-            <p>在过去的几年里，我参与了多个大型项目的开发，积累了丰富的实践经验。我相信技术的力量能够改变世界。</p>
-        </section>
+    <!-- 头部 -->
+    <header>
+        <img src="assets/images/avatar.jpg" alt="Avatar">
+        <h1>Song Pipi</h1>
+        <p>Associate Researcher<br>
+           School of Information Science and Technology<br>
+           University of Science and Technology of China (USTC)</p>
+    </header>
 
-        <section class="section">
-            <h2>技能</h2>
-            <div class="skills-container">
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Vue.js</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">Webpack</span>
-                <span class="skill-tag">RESTful API</span>
-            </div>
-        </section>
+    <!-- About -->
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I am currently an Associate Researcher at USTC. 
+            Previously, I worked as a postdoctoral researcher (July 2023 – June 2025) 
+            at the School of Information Science and Technology, USTC.  
+            I received my B.Eng. and Ph.D. from the School of Computer Science and Information Engineering, 
+            Hefei University of Technology.
+        </p>
+    </section>
 
-        <section class="section">
-            <h2>项目作品</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3 class="project-title">项目管理系统</h3>
-                    <p class="project-description">基于React和Node.js的全栈项目管理工具，支持任务分配、进度跟踪等功能。</p>
-                    <a href="#" class="project-link">查看项目</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3 class="project-title">数据分析仪表盘</h3>
-                    <p class="project-description">使用D3.js和React构建的交互式数据可视化仪表盘，支持实时数据更新。</p>
-                    <a href="#" class="project-link">查看项目</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3 class="project-title">移动端电商应用</h3>
-                    <p class="project-description">使用React Native开发的跨平台移动电商应用，包含完整的购物流程。</p>
-                    <a href="#" class="project-link">查看项目</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3 class="project-title">开源组件库</h3>
-                    <p class="project-description">一套高质量的React UI组件库，提供丰富的可复用组件和详细文档。</p>
-                    <a href="#" class="project-link">查看项目</a>
-                </div>
-            </div>
-        </section>
+    <!-- Research -->
+    <section>
+        <h2>Research Interests</h2>
+        <ul>
+            <li>Multimodal Intelligence</li>
+            <li>Vision-Language-Audio Perception & Reasoning</li>
+            <li>Visual Emotion Analysis</li>
+            <li>Cross-Modal Retrieval & Visual Captioning</li>
+        </ul>
+    </section>
 
-        <section class="section">
-            <h2>博客文章</h2>
-            <ul>
-                <li><a href="#">深入理解JavaScript闭包机制</a></li>
-                <li><a href="#">React性能优化最佳实践</a></li>
-                <li><a href="#">CSS Grid布局完全指南</a></li>
-                <li><a href="#">如何构建可维护的前端架构</a></li>
-            </ul>
-        </section>
+    <!-- Education -->
+    <section>
+        <h2>Education & Experience</h2>
+        <ul>
+            <li><strong>Ph.D.</strong>, Hefei University of Technology, 20XX–20XX</li>
+            <li><strong>B.Eng.</strong>, Hefei University of Technology, 20XX–20XX</li>
+            <li><strong>Postdoc</strong>, USTC, 2023–2025</li>
+            <li><strong>Associate Researcher</strong>, USTC, 2025–Present</li>
+        </ul>
+    </section>
 
-        <footer>
-            <p>&copy; 2023 Song Pipi. All rights reserved.</p>
-            <p>Designed with ❤️ using HTML & CSS</p>
-        </footer>
-    </div>
+    <!-- Contact -->
+    <section>
+        <h2>Contact</h2>
+        <p>
+            Email: songpipi [at] ustc.edu.cn<br>
+            GitHub: <a href="https://github.com/songpipi">songpipi</a>
+        </p>
+    </section>
+
+    <footer>
+        © 2026 Song Pipi · Built with GitHub Pages
+    </footer>
+
+</div>
+<script src="script.js"></script>
 </body>
 </html>
