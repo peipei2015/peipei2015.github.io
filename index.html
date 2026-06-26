@@ -18,7 +18,7 @@
             color: #333;
             line-height: 1.6;
         }
-        /* 导航栏容器 */
+        /* 顶部导航整行容器 */
         .nav-wrap {
             display: flex;
             justify-content: space-between;
@@ -27,11 +27,16 @@
             padding: 18px 0;
             margin-bottom: 30px;
         }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+        }
         nav a {
             text-decoration: none;
             color: #555;
             margin-right: 32px;
             font-size: 17px;
+            white-space: nowrap;
         }
         nav a:hover {
             color: #0056b3;
@@ -143,7 +148,7 @@
         .pub-item a:hover {
             text-decoration: underline;
         }
-        /* 双语控制：默认隐藏中文，英文显示 */
+        /* 双语显示控制 */
         .cn {
             display: none;
         }
@@ -166,37 +171,38 @@
             nav a {
                 margin-right: 16px;
                 font-size: 15px;
+                margin-bottom: 6px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 + 语言切换 -->
+    <!-- 顶部单行导航栏 + 语言切换 -->
     <div class="nav-wrap">
         <nav>
-            <a href="#" class="en">Homepage</a>
-            <a href="#" class="cn">主页</a>
+            <a href="#home" class="en">Homepage</a>
+            <a href="#home" class="cn">主页</a>
 
-            <a href="#" class="en">About Me</a>
-            <a href="#" class="cn">个人简介</a>
+            <a href="#about" class="en">About Me</a>
+            <a href="#about" class="cn">个人简介</a>
 
-            <a href="#" class="en">News</a>
-            <a href="#" class="cn">动态新闻</a>
+            <a href="#news" class="en">News</a>
+            <a href="#news" class="cn">近期动态</a>
 
-            <a href="#" class="en">Publications</a>
-            <a href="#" class="cn">论文成果</a>
+            <a href="#pubs" class="en">Publications</a>
+            <a href="#pubs" class="cn">代表性论文</a>
 
-            <a href="#" class="en">Funds</a>
-            <a href="#" class="cn">科研项目</a>
+            <a href="#funds" class="en">Funds</a>
+            <a href="#funds" class="cn">科研项目</a>
 
-            <a href="#" class="en">Experience</a>
-            <a href="#" class="cn">履历经历</a>
+            <a href="#exp" class="en">Experience</a>
+            <a href="#exp" class="cn">教育与工作履历</a>
 
-            <a href="#" class="en">Services</a>
-            <a href="#" class="cn">学术服务</a>
+            <a href="#service" class="en">Services</a>
+            <a href="#service" class="cn">学术服务</a>
         </nav>
         <div class="lang-btn-group">
-            <button id="btnEn" class="active">English</button>
+            <button id="btnEn">English</button>
             <button id="btnCn">中文</button>
         </div>
     </div>
@@ -230,30 +236,26 @@
             </div>
         </div>
 
-        <!-- 右侧正文 -->
+        <!-- 右侧主内容 -->
         <div class="main-content">
-            <div class="intro-text">
-                <!-- 英文简介 -->
+            <!-- 个人简介 -->
+            <div id="about" class="intro-text">
+                <!-- 英文 -->
                 <div class="en">
                     <p>I am currently an Associate Researcher at the School of Information Science and Technology, University of Science and Technology of China (USTC). I am a member of the <a href="#">Future Media Computing Lab (未来媒体计算实验室)</a>, led by Prof. Xiaojun Chang (常晓军) and Prof. Xun Yang (杨勋).</p>
-
                     <p>I completed my postdoctoral researcher job from July 2023 to June 2025 at the School of Information Science and Technology, University of Science and Technology of China, in Hefei, China, under the supervision of Prof. Xun Yang (杨勋). I obtained my bachelor’s and doctoral degrees from the School of Computer Science and Information Engineering, Hefei University of Technology. During my doctoral studies, I was supervised by Prof. Meng Wang (汪萌) and Prof. Dan Guo (郭丹).</p>
-
-                    <p>My research centers on multimodal intelligence, with a focus on perception, reasoning, and generation across vision, language, and audio modalities. I am particularly interested in how machines can perceive, interpret, and respond to human emotions in a multimodal context. My work spans topics such as cross-modal retrieval, visual captioning, and visual emotion reasoning, with the long-term goal of building empathetic and human-centric AI systems. If you are seeking any form of academic cooperation, please feel free to <a href="#">contact me</a>.</p>
+                    <p>My research centers on multimodal intelligence, with a focus on perception, reasoning, and generation across vision, language, and audio modalities. I am particularly interested in how machines can perceive, interpret, and respond to human emotions in a multimodal context. My work spans topics such as cross-modal retrieval, visual captioning, and visual emotion reasoning, with the long-term goal of building empathetic and human-centric AI systems. If you are seeking any form of academic cooperation, please feel free to contact me.</p>
                 </div>
-
-                <!-- 中文简介 -->
+                <!-- 中文 -->
                 <div class="cn">
-                    <p>我现任中国科学技术大学信息科学与技术学院副研究员，隶属于由常晓军教授、杨勋教授领衔的<a href="#">未来媒体计算实验室</a>。</p>
-
-                    <p>2023年7月—2025年6月于中国科学技术大学信息科学与技术学院从事博士后研究，合作导师为杨勋教授。本科与博士毕业于合肥工业大学计算机与信息工程学院，博士阶段师从汪萌教授与郭丹教授。</p>
-
-                    <p>主要研究方向为多模态智能，聚焦视觉、文本、音频跨模态感知、推理与生成；重点研究多模态场景下机器感知、理解、识别人类情绪的相关问题，具体包括跨模态检索、视觉描述生成、视觉情感推理等课题，长期目标是构建具备共情能力、以人为中心的人工智能系统。若有学术合作意向，欢迎<a href="#">联系我</a>。</p>
+                    <p>我现任中国科学技术大学信息科学与技术学院副研究员，隶属于常晓军教授、杨勋教授牵头的<a href="#">未来媒体计算实验室</a>。</p>
+                    <p>2023年7月至2025年6月于中国科学技术大学信息科学与技术学院完成博士后研究，合作导师为杨勋教授。本科、博士均毕业于合肥工业大学计算机与信息工程学院，博士阶段指导老师为汪萌教授、郭丹教授。</p>
+                    <p>研究方向为多模态智能，围绕视觉、文本、音频跨模态感知、推理与生成展开；重点研究多模态场景下机器对人类情绪的感知、理解与反馈，研究内容包含跨模态检索、视觉描述生成、视觉情感推理等，长期目标研发具备共情能力、以人为中心的人工智能系统。欢迎各类学术合作洽谈。</p>
                 </div>
             </div>
 
-            <!-- News 动态 -->
-            <section>
+            <!-- 新闻动态 -->
+            <section id="news">
                 <h3>
                     <span>🔥</span>
                     <span class="en">News</span>
@@ -280,7 +282,7 @@
             </section>
 
             <!-- 代表性论文 -->
-            <section>
+            <section id="pubs">
                 <h3>
                     <span>📝</span>
                     <span class="en">Selected Publications</span>
@@ -294,7 +296,22 @@
                         <a href="#">Video Corpus Moment Retrieval With Query-Specific Context Learning And Progressive Localization</a>, Long Zhang, Peipei Song*, Zhangling Duan, Shuo Wang, Xiaojun Chang, Xun Yang, IEEE TCSVT 2025
                     </div>
                     <div class="pub-item">
-                        <a href="#">Towards Efficient Partially Relevant Video Retrieval With Active Moment Discovering</a>, Peipei Song, Long Zhang, Long Lan, Weidong Chen, Dan Guo
+                        <a href="#">Towards Efficient Partially Relevant Video Retrieval With Active Moment Discovering</a>, Peipei Song, Long Zhang, Long Lan, Weidong Chen, Dan Guo, Xun Yang, Meng Wang, IEEE TMM 2025
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">Emotional Video Captioning With Vision-Based Emotion Interpretation Network</a>, Peipei Song, Dan Guo, Xun Yang, Shengeng Tang, Meng Wang, IEEE TIP 2024
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">Emotion-Prior Awareness Network For Emotional Video Captioning</a>, Peipei Song, Dan Guo, Xun Yang, Shengeng Tang, Erkun Yang, Meng Wang, ACM MM 2023
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">Contextual Attention Network For Emotional Video Captioning</a>, Peipei Song, Dan Guo, Jun Cheng, Meng Wang, IEEE TMM 2022
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">Memorial Gan With Joint Semantic Optimization For Unpaired Image Captioning</a>, Peipei Song, Dan Guo, Jinxing Zhou, Mingliang Xu, Meng Wang, IEEE TCYB 2022
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">Recurrent Relational Memory Network For Unsupervised Image Captioning</a>, Dan Guo, Yang Wang, Peipei Song*, Meng Wang, IJCAI 2020
                     </div>
                 </div>
                 <div class="cn">
@@ -305,19 +322,103 @@
                         <a href="#">基于查询专属上下文学习与渐进定位的视频片段检索方法</a>, Long Zhang, 宋培培*, Zhangling Duan, Shuo Wang, Xiaojun Chang, Xun Yang, IEEE TCSVT 2025
                     </div>
                     <div class="pub-item">
-                        <a href="#">面向高效部分相关视频检索的主动片段挖掘方法</a>, 宋培培, Long Zhang, Long Lan, Weidong Chen, Dan Guo
+                        <a href="#">面向高效部分相关视频检索的主动片段挖掘方法</a>, 宋培培, Long Zhang, Long Lan, Weidong Chen, Dan Guo, Xun Yang, Meng Wang, IEEE TMM 2025
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">基于视觉情感解析网络的情感视频描述生成</a>, 宋培培, Dan Guo, Xun Yang, Shengeng Tang, Meng Wang, IEEE TIP 2024
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">融合情感先验感知网络的情感视频描述生成</a>, 宋培培, Dan Guo, Xun Yang, Shengeng Tang, Erkun Yang, Meng Wang, ACM MM 2023
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">上下文注意力网络用于情感视频描述生成</a>, 宋培培, Dan Guo, Jun Cheng, Meng Wang, IEEE TMM 2022
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">联合语义优化记忆生成对抗网络用于无配对图像描述</a>, 宋培培, Dan Guo, Jinxing Zhou, Mingliang Xu, Meng Wang, IEEE TCYB 2022
+                    </div>
+                    <div class="pub-item">
+                        <a href="#">循环关系记忆网络用于无监督图像描述生成</a>, Dan Guo, Yang Wang, 宋培培*, Meng Wang, IJCAI 2020
                     </div>
                 </div>
+            </section>
+
+            <!-- 科研项目 Funds -->
+            <section id="funds">
+                <h3>
+                    <span>🎖</span>
+                    <span class="en">Funds</span>
+                    <span class="cn">科研项目</span>
+                </h3>
+                <ul class="en">
+                    <li>2025.01–2027.12, Young Scientists Fund (C Class), National Natural Science Foundation of China.</li>
+                    <li>2025.01–2026.06, General Program, China Postdoctoral Science Foundation.</li>
+                </ul>
+                <ul class="cn">
+                    <li>2025.01–2027.12，国家自然科学基金青年科学基金（C类）</li>
+                    <li>2025.01–2026.06，中国博士后科学基金面上项目</li>
+                </ul>
+            </section>
+
+            <!-- 履历 Experience -->
+            <section id="exp">
+                <h3>
+                    <span>📖</span>
+                    <span class="en">Experience</span>
+                    <span class="cn">教育与工作履历</span>
+                </h3>
+                <ul class="en">
+                    <li>2025.07–Now, Associate Researcher, School of Information Science and Technology, University of Science and Technology of China, Hefei, China.</li>
+                    <li>2023.07–2025.06, Postdoc, School of Information Science and Technology, University of Science and Technology of China, Hefei, China.</li>
+                    <li>2017.09–2023.06, PhD, School of Computer Science and Information Engineering, Hefei University of Technology, Hefei, China.</li>
+                    <li>2013.09–2017.06, Undergraduate, School of Computer Science and Information Engineering, Hefei University of Technology, Hefei, China.</li>
+                </ul>
+                <ul class="cn">
+                    <li>2025.07–至今，副研究员，中国科学技术大学信息科学与技术学院</li>
+                    <li>2023.07–2025.06，博士后，中国科学技术大学信息科学与技术学院</li>
+                    <li>2017.09–2023.06，博士，合肥工业大学计算机与信息工程学院</li>
+                    <li>2013.09–2017.06，本科，合肥工业大学计算机与信息工程学院</li>
+                </ul>
+            </section>
+
+            <!-- 学术服务 Services -->
+            <section id="service">
+                <h3>
+                    <span>💻</span>
+                    <span class="en">Academic Services</span>
+                    <span class="cn">学术服务</span>
+                </h3>
+                <ul class="en">
+                    <li>Reviewer for ICCV (2025)</li>
+                    <li>Reviewer for ACM MM (2024/2025)</li>
+                    <li>Reviewer for AAAI (2022/2023/2024/2025/2026)</li>
+                    <li>Reviewer for IEEE TMM</li>
+                    <li>Reviewer for IEEE TNNLS</li>
+                    <li>Reviewer for IEEE TCSVT</li>
+                    <li>Reviewer for ACM TOMM</li>
+                    <li>Reviewer for Pattern Recognition</li>
+                    <li>Reviewer for Neurocomputing</li>
+                </ul>
+                <ul class="cn">
+                    <li>ICCV 2025 审稿人</li>
+                    <li>ACM MM 2024/2025 审稿人</li>
+                    <li>AAAI 2022/2023/2024/2025/2026 审稿人</li>
+                    <li>IEEE TMM 期刊审稿人</li>
+                    <li>IEEE TNNLS 期刊审稿人</li>
+                    <li>IEEE TCSVT 期刊审稿人</li>
+                    <li>ACM TOMM 期刊审稿人</li>
+                    <li>Pattern Recognition 期刊审稿人</li>
+                    <li>Neurocomputing 期刊审稿人</li>
+                </ul>
             </section>
         </div>
     </div>
 
     <script>
-        // 获取按钮
         const btnEn = document.getElementById('btnEn');
         const btnCn = document.getElementById('btnCn');
         const allEn = document.querySelectorAll('.en');
         const allCn = document.querySelectorAll('.cn');
+        const storageKey = "homepageLang";
 
         // 切换英文
         function switchEn() {
@@ -326,6 +427,7 @@
             btnEn.classList.add('active');
             btnCn.classList.remove('active');
             document.documentElement.lang = 'en';
+            localStorage.setItem(storageKey, 'en');
         }
         // 切换中文
         function switchCn() {
@@ -334,6 +436,15 @@
             btnEn.classList.remove('active');
             btnCn.classList.add('active');
             document.documentElement.lang = 'zh-CN';
+            localStorage.setItem(storageKey, 'cn');
+        }
+
+        // 读取本地存储语言
+        const savedLang = localStorage.getItem(storageKey);
+        if (savedLang === 'cn') {
+            switchCn();
+        } else {
+            switchEn();
         }
 
         btnEn.addEventListener('click', switchEn);
