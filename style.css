@@ -9,7 +9,30 @@ body {
     color: #222;
     line-height: 1.65;
     font-size: 16px;
+    padding-left: 180px;
 }
+/* 侧边固定导航栏 */
+.sidebar-nav {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    width: 140px;
+}
+.sidebar-nav ul {
+    list-style: none;
+}
+.sidebar-nav li {
+    margin: 12px 0;
+}
+.sidebar-nav a {
+    color: #0056b3;
+    text-decoration: none;
+    font-size: 15px;
+}
+.sidebar-nav a:hover {
+    text-decoration: underline;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -19,6 +42,16 @@ body {
     margin-bottom: 40px;
     border-bottom: 1px solid #eee;
     padding-bottom: 20px;
+    overflow: hidden;
+}
+/* 右上角头像样式 */
+.avatar {
+    width: 140px;
+    border-radius: 8px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    object-fit: cover;
 }
 .header h1 {
     font-size: 28px;
@@ -34,6 +67,11 @@ body {
 .header p {
     margin: 4px 0;
     color: #333;
+}
+.visitor-count {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #555;
 }
 a {
     color: #0056b3;
@@ -64,6 +102,9 @@ ul {
     background-color: #f9fafb;
     border-radius: 6px;
 }
+.paper-item a {
+    margin-left: 8px;
+}
 .note {
     font-size: 14px;
     color: #666;
@@ -83,12 +124,26 @@ ul {
     color: #777;
     text-align: center;
 }
-/* 移动端适配 */
+
+/* 移动端适配：侧边导航收起，页面边距重置 */
+@media screen and (max-width: 900px) {
+    body {
+        padding-left: 0;
+    }
+    .sidebar-nav {
+        display: none;
+    }
+}
 @media screen and (max-width: 720px) {
     .container {
         padding: 20px 15px;
     }
     .header h1 {
         font-size: 24px;
+    }
+    .avatar {
+        float: none;
+        display: block;
+        margin: 0 auto 15px auto;
     }
 }
