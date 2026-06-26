@@ -465,5 +465,13 @@
         btnEn.addEventListener('click', switchEn);
         btnCn.addEventListener('click', switchCn);
     </script>
+    <div class="footer">
+        总访问量：<span id="count"></span>
+    </div>
+    <script>
+        fetch('count.php')
+            .then(res => res.text())
+            .then(n => document.getElementById('count').innerText = n)
+    </script>
 </body>
 </html>
