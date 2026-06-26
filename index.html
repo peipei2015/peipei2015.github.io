@@ -7,18 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 侧边导航栏 -->
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#funds">Funds</a></li>
+            <li><a href="#service">Academic Service</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <!-- 头部个人信息 -->
+        <!-- 头部个人信息 + 右上角头像 -->
         <header class="header">
+            <img src="avatar.jpg" alt="avatar" class="avatar">
             <h1>Peipei Song (宋培培)</h1>
             <h3>Associate Researcher, University of Science and Technology of China</h3>
             <p>Focusing on multimodal intelligence and empathetic AI | Hefei, China</p>
             <p>Future Media Computing Lab, supervised by Prof. Xiaojun Chang & Prof. Xun Yang</p>
-            <p>Contact: xxx@ustc.edu.cn | Github: <a href="https://github.com/xxx">github.com/xxx</a></p>
+            <p>
+                Contact: xxx@ustc.edu.cn
+                | Github: <a href="https://github.com/xxx">github.com/xxx</a>
+                | <a href="https://scholar.google.com/">Google Scholar</a>
+                | <a href="https://orcid.org/">ORCID</a>
+            </p>
+            <p class="visitor-count">Page Visits: <span id="visitor-num">0</span></p>
         </header>
 
         <!-- 研究简介 -->
-        <section class="section">
+        <section id="about" class="section">
             <h2>About Me</h2>
             <p>I am currently an Associate Researcher at the School of Information Science and Technology, USTC.
             I completed my postdoctoral training (2023.07–2025.06) at USTC under Prof. Xun Yang.
@@ -28,7 +47,7 @@
         </section>
 
         <!-- 工作&教育经历 -->
-        <section class="section">
+        <section id="experience" class="section">
             <h2>📖 Experience</h2>
             <ul class="timeline">
                 <li><b>2025.07 – Now</b>: Associate Researcher, School of Information Science and Technology, USTC, Hefei</li>
@@ -39,7 +58,7 @@
         </section>
 
         <!-- 最新成果 News -->
-        <section class="section">
+        <section id="news" class="section">
             <h2>🔥 News</h2>
             <ul class="news-list">
                 <li><b>2026.01</b> 🎉 One paper accepted by ICASSP!</li>
@@ -52,47 +71,55 @@
             </ul>
         </section>
 
-        <!-- 精选论文 -->
-        <section class="section">
+        <!-- 精选论文（附带PDF链接） -->
+        <section id="publications" class="section">
             <h2>📝 Selected Publications</h2>
             <div class="paper-item">
                 <p><b>ACM MM 2025</b> Beyond emotion recognition: A multi-turn multimodal emotion understanding and reasoning benchmark<br>
-                Jinpeng Hu, Hongchang Shi, Chongyuan Dai, Zhuo Li, <b>Peipei Song</b>, Meng Wang</p>
+                Jinpeng Hu, Hongchang Shi, Chongyuan Dai, Zhuo Li, <b>Peipei Song</b>, Meng Wang
+                <a href="paper1.pdf">[PDF]</a></p>
             </div>
             <div class="paper-item">
                 <p><b>IEEE TCSVT 2025</b> Video Corpus Moment Retrieval With Query-Specific Context Learning And Progressive Localization<br>
-                Long Zhang, <b>Peipei Song*</b>, Zhangling Duan, Shuo Wang, Xiaojun Chang, Xun Yang</p>
+                Long Zhang, <b>Peipei Song*</b>, Zhangling Duan, Shuo Wang, Xiaojun Chang, Xun Yang
+                <a href="paper2.pdf">[PDF]</a></p>
                 <span class="note">* Corresponding Author</span>
             </div>
             <div class="paper-item">
                 <p><b>IEEE TMM 2025</b> Towards Efficient Partially Relevant Video Retrieval With Active Moment Discovering<br>
-                <b>Peipei Song</b>, Long Zhang, Long Lan, Weidong Chen, Dan Guo, Xun Yang, Meng Wang</p>
+                <b>Peipei Song</b>, Long Zhang, Long Lan, Weidong Chen, Dan Guo, Xun Yang, Meng Wang
+                <a href="paper3.pdf">[PDF]</a></p>
             </div>
             <div class="paper-item">
                 <p><b>IEEE TIP 2024</b> Emotional Video Captioning With Vision-Based Emotion Interpretation Network<br>
-                <b>Peipei Song</b>, Dan Guo, Xun Yang, Shengeng Tang, Meng Wang</p>
+                <b>Peipei Song</b>, Dan Guo, Xun Yang, Shengeng Tang, Meng Wang
+                <a href="paper4.pdf">[PDF]</a></p>
             </div>
             <div class="paper-item">
                 <p><b>ACM MM 2023</b> Emotion-Prior Awareness Network For Emotional Video Captioning<br>
-                <b>Peipei Song</b>, Dan Guo, Xun Yang, Shengeng Tang, Erkun Yang, Meng Wang</p>
+                <b>Peipei Song</b>, Dan Guo, Xun Yang, Shengeng Tang, Erkun Yang, Meng Wang
+                <a href="paper5.pdf">[PDF]</a></p>
             </div>
             <div class="paper-item">
                 <p><b>IEEE TMM 2022</b> Contextual Attention Network For Emotional Video Captioning<br>
-                <b>Peipei Song</b>, Dan Guo, Jun Cheng, Meng Wang</p>
+                <b>Peipei Song</b>, Dan Guo, Jun Cheng, Meng Wang
+                <a href="paper6.pdf">[PDF]</a></p>
             </div>
             <div class="paper-item">
                 <p><b>IEEE TCYB 2022</b> Memorial Gan With Joint Semantic Optimization For Unpaired Image Captioning<br>
-                <b>Peipei Song</b>, Dan Guo, Jinxing Zhou, Mingliang Xu, Meng Wang</p>
+                <b>Peipei Song</b>, Dan Guo, Jinxing Zhou, Mingliang Xu, Meng Wang
+                <a href="paper7.pdf">[PDF]</a></p>
             </div>
             <div class="paper-item">
                 <p><b>IJCAI 2020</b> Recurrent Relational Memory Network For Unsupervised Image Captioning<br>
-                Dan Guo, Yang Wang, <b>Peipei Song*</b>, Meng Wang</p>
+                Dan Guo, Yang Wang, <b>Peipei Song*</b>, Meng Wang
+                <a href="paper8.pdf">[PDF]</a></p>
                 <span class="note">* Corresponding Author</span>
             </div>
         </section>
 
         <!-- 基金项目 -->
-        <section class="section">
+        <section id="funds" class="section">
             <h2>🎖 Funds</h2>
             <ul class="fund-list">
                 <li><b>2025.01–2027.12</b> Young Scientists Fund (C Class), National Natural Science Foundation of China</li>
@@ -101,7 +128,7 @@
         </section>
 
         <!-- 学术服务 审稿人 -->
-        <section class="section">
+        <section id="service" class="section">
             <h2>💻 Academic Services (Reviewer)</h2>
             <div class="reviewer-row">
                 <span>Conferences:</span> ICCV 2025, ACM MM 2024/2025, AAAI 2022–2026
@@ -116,5 +143,13 @@
             <p>© 2026 Peipei Song | Powered by GitHub Pages</p>
         </footer>
     </div>
+
+    <!-- 访问量统计脚本 -->
+    <script>
+        // 简易访问计数器（基于localStorage）
+        let count = parseInt(localStorage.getItem('visitCount') || '0') + 1;
+        localStorage.setItem('visitCount', count);
+        document.getElementById('visitor-num').innerText = count;
+    </script>
 </body>
 </html>
