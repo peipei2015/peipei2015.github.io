@@ -474,15 +474,11 @@
         btnEn.addEventListener('click', switchEn);
         btnCn.addEventListener('click', switchCn);
     </script>
-    <div style="text-align:center;margin:20px 0;">
-        本站访问次数：<span id="visitCount">0</span>
+    <!-- 访问统计 -->
+    <div style="margin: 15px 0; text-align: center; font-size: 14px; color:#666;">
+      总访问量：<span id="busuanzi_value_site_pv"></span>
+      &nbsp;&nbsp;访客数：<span id="busuanzi_value_site_uv"></span>
     </div>
-    <script>
-        // 获取本地存储次数
-        let count = localStorage.getItem('pageVisitCount') || 0;
-        count = Number(count) + 1;
-        localStorage.setItem('pageVisitCount', count);
-        document.getElementById('visitCount').innerText = count;
-    </script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
