@@ -474,5 +474,15 @@
         btnEn.addEventListener('click', switchEn);
         btnCn.addEventListener('click', switchCn);
     </script>
+    <div style="text-align:center;margin:20px 0;">
+        本站访问次数：<span id="visitCount">0</span>
+    </div>
+    <script>
+        // 获取本地存储次数
+        let count = localStorage.getItem('pageVisitCount') || 0;
+        count = Number(count) + 1;
+        localStorage.setItem('pageVisitCount', count);
+        document.getElementById('visitCount').innerText = count;
+    </script>
 </body>
 </html>
